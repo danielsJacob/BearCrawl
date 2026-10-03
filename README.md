@@ -6,7 +6,7 @@
 Before running a checkout, open the configuration file:
 
 ```%USERPROFILE%\Documents\bearcrawl\config.json```
-![Checkout Form](img\checkout_forms.png)
+![Checkout Form](checkout_forms.png)
 
 Set up your checkout information in the configuration file. <strong>Bearcrawl</strong> uses these values to automatically fill in the corresponding checkout fields when needed.
 
