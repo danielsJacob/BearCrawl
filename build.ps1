@@ -12,17 +12,18 @@ if (Test-Path -LiteralPath $browserDir) {
 $env:PLAYWRIGHT_BROWSERS_PATH = $browserDir
 Push-Location $projectRoot
 try {
-    uv sync
+    uv sync --reinstall-package bearcrawl
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
-    uv run playwright install chromium
+    uv run python -m playwright install chromium
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
-    uv run pyinstaller `
+    uv run python -m PyInstaller `
         --clean `
         --noconfirm `
         --onedir `
         --name Bearcrawl `
+        --specpath (Join-Path $projectRoot "build") `
         --icon "C:\Users\PC\Downloads\Smiley.ico" `
         --paths (Join-Path $projectRoot "src") `
         --collect-all playwright `
