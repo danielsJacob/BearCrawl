@@ -1,0 +1,12 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+Output/
+bearcrawler_inno.iss
+
+# Virtual environments
+.venv
